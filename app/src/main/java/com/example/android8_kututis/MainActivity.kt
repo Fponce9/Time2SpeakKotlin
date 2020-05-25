@@ -4,6 +4,7 @@ import android.content.Intent
 import android.nfc.Tag
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.android8_kututis.Network.KututisApi
 import com.example.android8_kututis.Network.User
@@ -85,19 +86,21 @@ class MainActivity : AppCompatActivity() {
         val correo=etCorreoMain.text.toString()
         val contrasena=etContrasenaMain.text.toString()
         val retrofitBuilder = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
             .baseUrl("http://time2speak-env.eba-mitec5md.us-east-1.elasticbeanstalk.com/")
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
         val KututisApi = retrofitBuilder.create(KututisApi::class.java)
-        val call: Call<User> = KututisApi.getUserData(correo, contrasena)
-        call.enqueue(object : Callback<User> {
-            override fun onFailure(call: Call<User>, t: Throwable) {
-                btnInciarSesion.text= "Error"
+        val request = KututisApi.getUserData(correo, contrasena)
 
+        request.enqueue(object : Callback<User> {
+            override fun onFailure(call: Call<User>, t: Throwable) {
+                Toast.makeText(applicationContext,"Su correo o contraseña no son correctos.",Toast.LENGTH_LONG).show()
+                Log.d("MainActivity",t.toString())
             }
 
             override fun onResponse(call: Call<User>, response: Response<User>) {
-                btnInciarSesion.text= "Success"
+                val nombre = response.body()!!.nombre
+                Toast.makeText(applicationContext,"Bienvenido $nombre",Toast.LENGTH_LONG).show()
 
             }
 
