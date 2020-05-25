@@ -10,52 +10,75 @@
         android:id="@+id/imageView"
         android:layout_width="293dp"
         android:layout_height="203dp"
-        android:layout_marginTop="8dp"
+        android:contentDescription="@string/logo_time2speak"
+        app:layout_constraintBottom_toTopOf="@+id/btnGoogle"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logotime2speak"
-        android:contentDescription="@string/logo_time2speak" />
+        app:srcCompat="@drawable/logotime2speak" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/btnGoogle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/width_contraint_editText"
-        android:layout_marginTop="148dp"
         android:layout_marginEnd="@dimen/width_contraint_editText"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/etCorreoMain"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/etContraseñaMain"
+        android:id="@+id/etContrasenaMain"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/width_contraint_editText"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="@dimen/width_contraint_editText"
+        android:layout_marginBottom="28dp"
         android:ems="10"
         android:hint="Contraseña"
         android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/btnInciarSesion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCorreoMain" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/etCorreoMain"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/width_contraint_editText"
-        android:layout_marginTop="50dp"
         android:layout_marginEnd="@dimen/width_contraint_editText"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="Correo electronico"
         android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/etContrasenaMain"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGoogle" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnInciarSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Iniciar Sesión"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="96dp"
+        android:text="¿Aun no tienes una cuenta? Registrate ahora"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

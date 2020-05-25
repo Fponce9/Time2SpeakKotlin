@@ -5,12 +5,20 @@ import android.nfc.Tag
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.android8_kututis.Network.KututisApi
+import com.example.android8_kututis.Network.User
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_registro_paciente.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 
 class MainActivity : AppCompatActivity() {
@@ -34,6 +42,15 @@ class MainActivity : AppCompatActivity() {
             val signInIntent: Intent = mGoogleSignInClient.signInIntent
             startActivityForResult(signInIntent, RC_SIGN_IN)
         }
+
+        btnInciarSesion.setOnClickListener{
+            Login()
+        }
+        textView.setOnClickListener {
+            val SignUpIntent = Intent(this, RegistroPaciente::class.java)
+            startActivity(SignUpIntent)
+         }
+
 
     }
 
@@ -61,5 +78,30 @@ class MainActivity : AppCompatActivity() {
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Log.w("Error Inicio de sesion:","signInResult:failed code=" + e.statusCode)
         }
+    }
+
+    private fun Login() {
+
+        val correo=etCorreoMain.text.toString()
+        val contrasena=etContrasenaMain.text.toString()
+        val retrofitBuilder = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl("http://time2speak-env.eba-mitec5md.us-east-1.elasticbeanstalk.com/")
+            .build()
+        val KututisApi = retrofitBuilder.create(KututisApi::class.java)
+        val call: Call<User> = KututisApi.getUserData(correo, contrasena)
+        call.enqueue(object : Callback<User> {
+            override fun onFailure(call: Call<User>, t: Throwable) {
+                btnInciarSesion.text= "Error"
+
+            }
+
+            override fun onResponse(call: Call<User>, response: Response<User>) {
+                btnInciarSesion.text= "Success"
+
+            }
+
+        })
+
     }
 }
