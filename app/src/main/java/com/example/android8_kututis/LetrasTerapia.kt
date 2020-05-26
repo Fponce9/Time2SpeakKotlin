@@ -1,5 +1,6 @@
 package com.example.android8_kututis
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -14,7 +15,7 @@ class LetrasTerapia : AppCompatActivity() {
         setContentView(R.layout.activity_letras_terapia)
 
         val acct = GoogleSignIn.getLastSignedInAccount(this)
-        /*if (acct != null) {
+        if (acct != null) {
             val personName = acct.displayName
             val personEmail = acct.email
             val personId = acct.id
@@ -22,9 +23,20 @@ class LetrasTerapia : AppCompatActivity() {
             tvNombre.text = personName
             tvEmail.text = personEmail
             /*tvId.text = personId */
-        }*/
+
+        }
         val per = intent.getStringExtra("idPcienteinit")
         tvNombre.text=per
+        tvEmail.text ="ts"
+
+        tvEmail.setOnClickListener {
+            val FeedbackIntent = Intent(this, VisualizarFeedback::class.java)
+            intent.putExtra("idUser", 2)
+            intent.putExtra("idLetra", tvEmail.text.toString())
+            startActivity(FeedbackIntent)
+
+
+        }
 
     }
 }
