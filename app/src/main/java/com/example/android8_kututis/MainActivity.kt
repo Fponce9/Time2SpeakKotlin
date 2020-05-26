@@ -21,7 +21,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-
+var usuario : User = User("","","",false,0,"",0,"")
 class MainActivity : AppCompatActivity() {
 
     var RC_SIGN_IN = 0
@@ -46,6 +46,8 @@ class MainActivity : AppCompatActivity() {
 
         btnInciarSesion.setOnClickListener{
             Login()
+
+
         }
         textView.setOnClickListener {
             val SignUpIntent = Intent(this, RegistroPaciente::class.java)
@@ -100,11 +102,19 @@ class MainActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<User>, response: Response<User>) {
                 val nombre = response.body()!!.nombre
-                Toast.makeText(applicationContext,"Bienvenido $nombre",Toast.LENGTH_LONG).show()
+                usuario.nombre=nombre
+                usuario.idPaciente=response.body()!!.idPaciente
+                Logger()
 
             }
-
         })
+    }
 
+    private fun Logger(){
+        if (usuario.idPaciente != 0){
+            val TerapiaIntent = Intent(this, LetrasTerapia::class.java)
+            intent.putExtra("idPacienteinit", "${usuario.idPaciente}")
+            startActivity(TerapiaIntent)
+        }
     }
 }

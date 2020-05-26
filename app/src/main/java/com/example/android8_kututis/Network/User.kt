@@ -11,6 +11,6 @@ class User(
     @SerializedName("fecha_nacimiento")
     val fechaNacimiento : String,
     @SerializedName("id_paciente")
-    val idPaciente: Int,
-    val nombre: String
+    var idPaciente: Int,
+    var nombre: String
 )

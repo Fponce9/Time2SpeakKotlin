@@ -14,15 +14,17 @@ class LetrasTerapia : AppCompatActivity() {
         setContentView(R.layout.activity_letras_terapia)
 
         val acct = GoogleSignIn.getLastSignedInAccount(this)
-        if (acct != null) {
+        /*if (acct != null) {
             val personName = acct.displayName
             val personEmail = acct.email
             val personId = acct.id
             val personPhoto: Uri? = acct.photoUrl
-
             tvNombre.text = personName
             tvEmail.text = personEmail
-            tvId.text = personId
-        }
+            /*tvId.text = personId */
+        }*/
+        val per = intent.getStringExtra("idPcienteinit")
+        tvNombre.text=per
+
     }
 }
