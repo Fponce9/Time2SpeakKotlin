@@ -12,120 +12,121 @@
         android:layout_height="match_parent"
         tools:context=".RegistroActivity">
 
-        <EditText
-            android:id="@+id/etRepetirRegistroPaciente"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/width_contraint_editText"
-            android:layout_marginEnd="@dimen/width_contraint_editText"
-            android:layout_marginBottom="72dp"
-            android:ems="10"
-            android:hint="Repita Contraseña"
-            android:inputType="textEmailAddress"
-            app:layout_constraintBottom_toTopOf="@+id/btnRegistrarme"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <EditText
-            android:id="@+id/etContrasenaRegistroPaciente"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/width_contraint_editText"
-            android:layout_marginEnd="@dimen/width_contraint_editText"
-            android:layout_marginBottom="20dp"
-            android:ems="10"
-            android:hint="Contraseña"
-            android:inputType="textEmailAddress"
-            app:layout_constraintBottom_toTopOf="@+id/etRepetirRegistroPaciente"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <EditText
-            android:id="@+id/etNombreRegistroPaciente"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/width_contraint_editText"
-            android:layout_marginEnd="@dimen/width_contraint_editText"
-            android:layout_marginBottom="20dp"
-            android:ems="10"
-            android:hint="Nombre"
-            android:inputType="textEmailAddress"
-            app:layout_constraintBottom_toTopOf="@+id/etContrasenaRegistroPaciente"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <EditText
-            android:id="@+id/etApellidoRegistroPaciente"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/width_contraint_editText"
-            android:layout_marginEnd="@dimen/width_contraint_editText"
-            android:layout_marginBottom="20dp"
-            android:ems="10"
-            android:hint="Apellido"
-            android:inputType="textEmailAddress"
-            app:layout_constraintBottom_toTopOf="@+id/etCorreoRegistroPaciente"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <EditText
-            android:id="@+id/etCorreoRegistroPaciente"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/width_contraint_editText"
-            android:layout_marginEnd="@dimen/width_contraint_editText"
-            android:layout_marginBottom="20dp"
-            android:ems="10"
-            android:hint="Correo electronico"
-            android:inputType="textEmailAddress"
-            app:layout_constraintBottom_toTopOf="@+id/etFechaNacimiento"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
-
         <Button
             android:id="@+id/btnRegistrarme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="104dp"
             android:layout_marginBottom="116dp"
-            android:text="Registrarme"
+            android:text="@string/registrarme"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <EditText
-            android:id="@+id/etFechaNacimiento"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginBottom="20dp"
-            android:ems="10"
-            android:hint="Fecha de nacimiento"
-            android:inputType="date"
-            app:layout_constraintBottom_toTopOf="@+id/etNombreRegistroPaciente"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etConfContrasenaRegistro" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:text="REGISTRO"
+            android:layout_marginTop="40dp"
+            android:text="@string/registro"
             android:textColor="@android:color/holo_orange_dark"
             android:textSize="30sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/etApellidoRegistroPaciente"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.02" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etEmailRegistro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="60dp"
+            android:ems="10"
+            android:hint="@string/correo_electronico"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etApellidoRegistro"
+            android:autofillHints="emailAddress" />
+
+        <EditText
+            android:id="@+id/etApellidoRegistro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="60dp"
+            android:ems="10"
+            android:hint="@string/apellido"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etNombreRegistro"
+            android:autofillHints="personFamilyName" />
+
+        <EditText
+            android:id="@+id/etNacimientoRegistro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="60dp"
+            android:ems="10"
+            android:hint="@string/nacimiento"
+            android:inputType="date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEmailRegistro"
+             />
+
+        <EditText
+            android:id="@+id/etContrasenaRegistro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="60dp"
+            android:ems="10"
+            android:hint="@string/contrasena"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etNacimientoRegistro"
+            android:autofillHints="newPassword" />
+
+        <EditText
+            android:id="@+id/etConfContrasenaRegistro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="60dp"
+            android:ems="10"
+            android:hint="@string/confcontrasena"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etContrasenaRegistro"
+            />
+
+        <EditText
+            android:id="@+id/etNombreRegistro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="60dp"
+            android:ems="10"
+            android:hint="@string/nombre"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            android:autofillHints="personName"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Android8_Kututis</string>
     <string name="logo_time2speak">Logo_Time2Speak</string>
+    <string name="registrarme">Registrarme</string>
+    <string name="correo_electronico">Correo Electronico</string>
+    <string name="nacimiento">Fecha de Nacimiento</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="confcontrasena">Confirmar Contraseña</string>
+    <string name="registro">REGISTRO</string>
+    <string name="apellido">Apellido</string>
+    <string name="nombre">Nombre</string>
 </resources>

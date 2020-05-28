@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import androidx.core.view.isVisible
 import com.example.android8_kututis.Network.Feedback
 import com.example.android8_kututis.Network.KututisApi
 import kotlinx.android.synthetic.main.activity_visualizar_feedback.*
