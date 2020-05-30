@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".VisualizarFeedback"></activity>
+        <activity android:name=".PalabrasLetra"></activity>
+        <activity android:name=".VisualizarFeedback" />
         <activity android:name=".RegistroPaciente" />
         <activity android:name=".LetrasTerapia" />
         <activity android:name=".MainActivity">
