@@ -2,8 +2,7 @@ package com.example.android8_kututis.Network
 
 import com.example.android8_kututis.LetrasTerapia
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.*
 
 
 internal interface KututisApi {
@@ -19,4 +18,7 @@ internal interface KututisApi {
 
     @GET("obtenerPalabras/{letra}")
     fun getPalabrasData(@Path ("letra")letra:String): Call<List<Palabra>>
+
+    @POST("registrarPaciente")
+    fun createUser(@Body usuario:UserPost):Call<User>
 }

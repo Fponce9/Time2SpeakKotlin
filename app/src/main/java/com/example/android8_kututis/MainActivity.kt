@@ -1,7 +1,6 @@
 package com.example.android8_kututis
 
 import android.content.Intent
-import android.nfc.Tag
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -14,7 +13,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_registro_paciente.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
