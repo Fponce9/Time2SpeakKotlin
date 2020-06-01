@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Grabacion">
+
+    <ImageView
+        android:id="@+id/iwPalabra"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="84dp"
+        android:contentDescription="@string/foto_palabra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPalabra"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    <TextView
+        android:id="@+id/tvPalabra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Estrella"
+        android:textColor="#FF9800"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivSpeak"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="68dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPalabra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvPalabra"
+        app:layout_constraintVertical_bias="0.483"
+        app:srcCompat="@drawable/ic_volume_up_black_24dp"
+        android:contentDescription="@string/imagen_speaker" />
+
+    <ImageView
+        android:id="@+id/ivMicrofono"
+        android:layout_width="85dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginBottom="60dp"
+        android:contentDescription="@string/imagen_microfono"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivMicrofonoOff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iwPalabra"
+        app:srcCompat="@drawable/ic_mic_black_24dp" />
+
+    <ImageView
+        android:id="@+id/ivMicrofonoOff"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivMicrofono"
+        app:layout_constraintTop_toBottomOf="@+id/iwPalabra"
+        app:srcCompat="@drawable/ic_baseline_mic_off_24"
+        android:contentDescription="@string/microfono_apagado" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,10 +3,11 @@
     package="com.example.android8_kututis">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,7 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".VisualizarFeedback"></activity>
+        <activity android:name=".Grabacion">
+
+        </activity>
+        <activity android:name=".VisualizarFeedback" />
         <activity android:name=".RegistroPaciente" />
         <activity android:name=".LetrasTerapia" />
         <activity android:name=".MainActivity">

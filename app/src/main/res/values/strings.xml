@@ -9,4 +9,8 @@
     <string name="registro">REGISTRO</string>
     <string name="apellido">Apellido</string>
     <string name="nombre">Nombre</string>
+    <string name="foto_palabra">Foto de la palabra</string>
+    <string name="imagen_speaker">Imagen de speaker</string>
+    <string name="imagen_microfono">Imagen de microfono</string>
+    <string name="microfono_apagado">Microfono Apagado</string>
 </resources>
