@@ -31,9 +31,8 @@ class Grabacion : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grabacion)
-
-        mStorage = FirebaseStorage.getInstance().getReference()
-        mProgressBar = ProgressBar(this)
+        val palabra=intent.getStringExtra("palabra")
+        tvPalabra.text=palabra
         if(!checkPermissionFromDevice())
             requestPermission()
 
@@ -114,7 +113,3 @@ class Grabacion : AppCompatActivity() {
     }
 
 }
-
-
-
-
