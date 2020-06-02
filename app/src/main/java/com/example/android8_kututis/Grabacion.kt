@@ -25,7 +25,8 @@ class Grabacion : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grabacion)
-
+        val palabra=intent.getStringExtra("palabra")
+        tvPalabra.text=palabra
         if(!checkPermissionFromDevice())
             requestPermission()
 

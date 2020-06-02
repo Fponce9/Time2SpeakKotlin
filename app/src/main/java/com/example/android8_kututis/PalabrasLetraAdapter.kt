@@ -1,5 +1,6 @@
 package com.example.android8_kututis
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,10 +22,19 @@ class PalabrasLetraAdapter(val Palabras:List<Palabra>):RecyclerView.Adapter<Pala
     override fun onBindViewHolder(holder: PalabrasViewHolder, position: Int) {
         val palabrasTitle=Palabras.get(position)
         holder.view.row_palabra_id.text=palabrasTitle.palabra
+        holder.palabra=palabrasTitle.palabra
     }
 
 }
 
-class PalabrasViewHolder(val view: View):RecyclerView.ViewHolder(view){
+class PalabrasViewHolder(val view: View,var palabra:String?= null):RecyclerView.ViewHolder(view){
+    init{
+        view.setOnClickListener {
+            val GrabacionIntent = Intent(view.context,Grabacion::class.java)
+            GrabacionIntent.putExtra("palabra",palabra)
+            view.context.startActivity(GrabacionIntent)
+        }
+    }
+
 
 }
