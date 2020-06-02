@@ -44,8 +44,6 @@ class MainActivity : AppCompatActivity() {
 
         btnInciarSesion.setOnClickListener{
             Login()
-
-
         }
         textView.setOnClickListener {
             val SignUpIntent = Intent(this, RegistroPaciente::class.java)
@@ -72,7 +70,7 @@ class MainActivity : AppCompatActivity() {
             val account = completedTask.getResult(ApiException::class.java)
 
             // Signed in successfully, show authenticated UI.
-            val TerapiaIntent =Intent(this,LetrasTerapia::class.java)
+            val TerapiaIntent =Intent(this,Grabacion::class.java)
             startActivity(TerapiaIntent)
         } catch (e: ApiException) {
             // The ApiException status code indicates the detailed failure reason.
@@ -103,7 +101,6 @@ class MainActivity : AppCompatActivity() {
                 usuario.nombre=nombre
                 usuario.idPaciente=response.body()!!.idPaciente
                 Logger()
-
             }
         })
     }

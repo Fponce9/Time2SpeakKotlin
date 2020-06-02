@@ -13,6 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="68dp"
         android:text="TextView"
+        android:textColor="#673AB7"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,14 +28,15 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="232dp"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="97dp"
-        android:layout_height="99dp"
+        android:layout_width="108dp"
+        android:layout_height="108dp"
         android:layout_marginBottom="116dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/tvComentario"
@@ -43,12 +47,11 @@
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="108dp"
-        android:layout_height="101dp"
+        android:layout_height="108dp"
         android:layout_marginBottom="116dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/tvComentario"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/star_big_on" />
 </androidx.constraintlayout.widget.ConstraintLayout>
