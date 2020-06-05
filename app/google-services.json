@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "118767976328",
-    "firebase_url": "https://tfmoviles-1590258471065.firebaseio.com",
-    "project_id": "tfmoviles-1590258471065",
-    "storage_bucket": "tfmoviles-1590258471065.appspot.com"
+    "project_number": "748192856271",
+    "firebase_url": "https://kututis-a5de5.firebaseio.com",
+    "project_id": "kututis-a5de5",
+    "storage_bucket": "kututis-a5de5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:118767976328:android:72965539ab56389507843d",
+        "mobilesdk_app_id": "1:748192856271:android:3dc57705ff7271c29c9fba",
         "android_client_info": {
           "package_name": "com.example.android8_kututis"
         }
       },
       "oauth_client": [
         {
-          "client_id": "118767976328-epjav54lkbld595q6e8bi4hkaoqfqvme.apps.googleusercontent.com",
+          "client_id": "748192856271-1ruao64aihj95au24aab355iof0r8ou4.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.android8_kututis",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "118767976328-4osjl6oj49bl51bn7fje3rsm1iqqm06d.apps.googleusercontent.com",
+          "client_id": "748192856271-ur6lidgh4dderfovp177kmbqa0al8941.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAgw6yEJCshwB0_wjOpsIr5Flw4mtri1TE"
+          "current_key": "AIzaSyBAAlGcTwRl_D-2uVFvJLUqpyD1qVYNgoE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "118767976328-4osjl6oj49bl51bn7fje3rsm1iqqm06d.apps.googleusercontent.com",
+              "client_id": "748192856271-ur6lidgh4dderfovp177kmbqa0al8941.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

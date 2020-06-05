@@ -13,12 +13,16 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.google.android.gms.tasks.OnFailureListener
+import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.UploadTask
 import kotlinx.android.synthetic.main.activity_grabacion.*
 import java.io.File
 import java.io.IOException
 import java.util.*
+
 
 class Grabacion : AppCompatActivity() {
 
@@ -26,11 +30,15 @@ class Grabacion : AppCompatActivity() {
     private var mRecorder: MediaRecorder? = null
     lateinit var pathSave: String
     val REQUEST_PERMISSION_CODE = 0
-    lateinit var mStorage: StorageReference
+    private var mStorage: StorageReference? =null
     lateinit var mProgressBar: ProgressBar
+    lateinit var nameFile: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grabacion)
+
+        mStorage = FirebaseStorage.getInstance().reference
+
         val palabra=intent.getStringExtra("palabra")
         tvPalabra.text=palabra
         if(!checkPermissionFromDevice())
@@ -54,9 +62,9 @@ class Grabacion : AppCompatActivity() {
 
         ivMicrofono.setOnClickListener{
             if(checkPermissionFromDevice()){
-
+                nameFile = UUID.randomUUID().toString()+"_audio_record.3gp"
                 pathSave = Environment.getExternalStorageDirectory()
-                    .absolutePath+"/"+ UUID.randomUUID().toString()+"_audio_record.3gp"
+                    .absolutePath+"/"+ nameFile
                 setupMediaRecorder()
             try{
                 mRecorder?.prepare()
@@ -80,11 +88,23 @@ class Grabacion : AppCompatActivity() {
 
     }
 
+    override fun onStart() {
+        super.onStart()
+        signInAnonymously()
+    }
+
+    private fun signInAnonymously() {
+
+    }
+
     private fun uploadAudio() {
-        mProgressBar
-        var filepath = mStorage.child("Audio").child(UUID.randomUUID().toString()+"_audio_record.3gp")
+        var filepath = mStorage?.child("Audio")?.child(nameFile)
         var uri = Uri.fromFile(File(pathSave))
-        filepath.putFile(uri)
+        filepath?.putFile(uri)?.addOnSuccessListener {
+            Toast.makeText(applicationContext,"Audio Subido Correctamente a la nube de google",Toast.LENGTH_LONG)
+        }?.addOnFailureListener(OnFailureListener {
+            Log.w("Subida de archivo Firebase","Audio no se pudo subir correctamente a la nube de google")
+        })
     }
 
     private fun setupMediaRecorder() {
