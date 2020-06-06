@@ -91,6 +91,7 @@ class MainActivity : AppCompatActivity() {
                     startActivity(TerapiaIntent)
                 }else{
                     Log.w("SignInActivity","Sign in Failure", task.exception)
+
                 }
             }
     }

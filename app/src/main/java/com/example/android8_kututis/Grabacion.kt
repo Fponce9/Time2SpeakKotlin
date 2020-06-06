@@ -8,16 +8,15 @@ import android.os.Bundle
 import android.os.Environment
 import android.speech.tts.TextToSpeech
 import android.util.Log
+import android.view.View
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.android.gms.tasks.OnFailureListener
-import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.google.firebase.storage.UploadTask
 import kotlinx.android.synthetic.main.activity_grabacion.*
 import java.io.File
 import java.io.IOException
@@ -33,6 +32,8 @@ class Grabacion : AppCompatActivity() {
     private var mStorage: StorageReference? =null
     lateinit var mProgressBar: ProgressBar
     lateinit var nameFile: String
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grabacion)
@@ -66,6 +67,9 @@ class Grabacion : AppCompatActivity() {
                 pathSave = Environment.getExternalStorageDirectory()
                     .absolutePath+"/"+ nameFile
                 setupMediaRecorder()
+                ivMicrofono.visibility = View.GONE
+                ivMicrofonoOff.visibility = View.VISIBLE
+
             try{
                 mRecorder?.prepare()
                 mRecorder?.start()
@@ -83,6 +87,8 @@ class Grabacion : AppCompatActivity() {
             mRecorder = null
             Log.w("PATH GRABACION",pathSave)
             Toast.makeText(this,"Grabacion Parada",Toast.LENGTH_SHORT).show()
+            ivMicrofono.visibility = View.VISIBLE
+            ivMicrofonoOff.visibility = View.GONE
             uploadAudio()
         }
 
