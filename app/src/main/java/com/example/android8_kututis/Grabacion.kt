@@ -101,7 +101,7 @@ class Grabacion : AppCompatActivity() {
         var filepath = mStorage?.child("Audio")?.child(nameFile)
         var uri = Uri.fromFile(File(pathSave))
         filepath?.putFile(uri)?.addOnSuccessListener {
-            Toast.makeText(applicationContext,"Audio Subido Correctamente a la nube de google",Toast.LENGTH_LONG)
+            Toast.makeText(this,"Audio Subido Correctamente a la nube de google",Toast.LENGTH_LONG)
         }?.addOnFailureListener(OnFailureListener {
             Log.w("Subida de archivo Firebase","Audio no se pudo subir correctamente a la nube de google")
         })
