@@ -32,15 +32,17 @@ class PalabrasLetraAdapter(val Palabras:List<Palabra>):RecyclerView.Adapter<Pala
         val decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
 
         holder.view.ImagenPalabra.setImageBitmap(decodedByte)
+        holder.imagen = palabrasTitle.imagen
     }
 
 }
 
-class PalabrasViewHolder(val view: View,var palabra:String?= null):RecyclerView.ViewHolder(view){
+class PalabrasViewHolder(val view: View,var palabra:String?= null, var imagen:String?=null):RecyclerView.ViewHolder(view){
     init{
         view.setOnClickListener {
             val GrabacionIntent = Intent(view.context,Grabacion::class.java)
             GrabacionIntent.putExtra("palabra",palabra)
+            GrabacionIntent.putExtra("imagen", imagen)
             view.context.startActivity(GrabacionIntent)
         }
     }
