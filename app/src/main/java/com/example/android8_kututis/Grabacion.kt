@@ -2,11 +2,13 @@ package com.example.android8_kututis
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
 import android.media.MediaRecorder
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.speech.tts.TextToSpeech
+import android.util.Base64
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
@@ -50,6 +52,13 @@ class Grabacion : AppCompatActivity() {
                 mTTS.language = Locale.getDefault()
             }
         })
+
+        val imagen = intent.getStringExtra("imagen")
+
+        val decodedString: ByteArray = Base64.decode(imagen, Base64.DEFAULT)
+        val decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
+
+        iwPalabra.setImageBitmap(decodedByte)
 
         ivSpeak.setOnClickListener{
             val palabra = tvPalabra.text.toString()
