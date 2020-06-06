@@ -13,4 +13,5 @@
     <string name="imagen_speaker">Imagen de speaker</string>
     <string name="imagen_microfono">Imagen de microfono</string>
     <string name="microfono_apagado">Microfono Apagado</string>
+    <string name="letraspracticar">Letras a practicar</string>
 </resources>

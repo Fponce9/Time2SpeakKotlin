@@ -22,15 +22,16 @@
 
         <TextView
             android:id="@+id/row_palabra_id"
-            android:textSize="22sp"
-            tools:text="Intento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/ImagenPalabra"
-            android:layout_toEndOf="@id/ImagenPalabra"
-            android:layout_marginLeft="16dp"
             android:layout_marginStart="20dp"
-            />
+            android:layout_marginLeft="16dp"
+            android:layout_toEndOf="@id/ImagenPalabra"
+            android:layout_toRightOf="@id/ImagenPalabra"
+            android:textColor="#FF9800"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:text="Intento" />
 
 
     </RelativeLayout>
