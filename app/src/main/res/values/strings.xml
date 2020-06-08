@@ -16,4 +16,8 @@
     <string name="letraspracticar">Letras a practicar</string>
     <string name="repitapalabra">Repita la palabra 5 veces</string>
     <string name="ejemploGrabacion">Estrella</string>
+    <string name="mensajef"> aun esta satisfecho. Recuerda revisar de vez en cuando su estado de ánimo para que este siempre feliz.</string>
+    <string name="mensajet"> tiene algo de hambre. Resuelve algunas palabras para que este feliz otra vez.</string>
+    <string name="mensajel"> tiene demasiada hambre y esta llorando. Resuelve algunas palabras para que este mas tranquilo.</string>
+    <string name="mensajem"> no ha recibido comida en mucho tiempo y esta muy molesto. Apresurate a resolver algunas palabras para darle felicidad otra vez.</string>
 </resources>

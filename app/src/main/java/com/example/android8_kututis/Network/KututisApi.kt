@@ -21,4 +21,7 @@ internal interface KututisApi {
 
     @POST("registrarPaciente")
     fun createUser(@Body usuario:UserPost):Call<User>
+
+    @GET("getMascotaPaciente/{id}")
+    fun getMascotaPaciente(@Path ("id")idPaciente:Int):Call<Mascota>
 }

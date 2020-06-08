@@ -24,6 +24,7 @@ class LetrasTerapia : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_letras_terapia)
+        val idPaciente = intent.getIntExtra("idPaciente",0)
 
        /* val acct = GoogleSignIn.getLastSignedInAccount(this)
         if (acct != null) {
@@ -34,6 +35,11 @@ class LetrasTerapia : AppCompatActivity() {
         }*/
         rv_LetrasTerapias.layoutManager = LinearLayoutManager(this)
         fetchLetras()
+        bt_mascota.setOnClickListener {
+            val MascotaIntent = Intent(this,Mascota::class.java)
+            MascotaIntent.putExtra("idPaciente",idPaciente)
+            startActivity(MascotaIntent)
+        }
     }
 
     fun fetchLetras(){

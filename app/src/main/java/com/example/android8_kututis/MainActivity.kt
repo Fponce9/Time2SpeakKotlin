@@ -138,6 +138,7 @@ class MainActivity : AppCompatActivity() {
     private fun Logger(){
         if (usuario.idPaciente != 0){
             val TerapiaIntent = Intent(this, LetrasTerapia::class.java)
+            TerapiaIntent.putExtra("idPaciente", usuario.idPaciente)
             startActivity(TerapiaIntent)
         }
     }
