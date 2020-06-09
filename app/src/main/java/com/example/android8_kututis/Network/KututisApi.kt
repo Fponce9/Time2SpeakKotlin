@@ -24,4 +24,7 @@ internal interface KututisApi {
 
     @GET("getMascotaPaciente/{id}")
     fun getMascotaPaciente(@Path ("id")idPaciente:Int):Call<Mascota>
+
+    @GET("getPremioPaciente/{Id}")
+    fun getPremiosPaciente(@Path ("Id")idPaciente:Int):Call<List<Premio>>
 }
