@@ -45,18 +45,22 @@ class Mascota : AppCompatActivity() {
                     imMascota.setImageResource(R.drawable.a_f)
                     val m = getString(R.string.mensajef)
                     tvMensajeMascota.text= tvNombreMascota.text.toString()+" "+getString(R.string.mensajef)
+                    tvalimento.setTextColor(getColor(R.color.saludbuena))
                 }
                 if(estado >3&& estado<6){
                     imMascota.setImageResource(R.drawable.a_t)
                     tvMensajeMascota.text= tvNombreMascota.text.toString() +" "+ getString(R.string.mensajet)
+                    tvalimento.setTextColor(getColor(R.color.saludmedia))
                 }
                 if(estado >2&& estado<4){
                     imMascota.setImageResource(R.drawable.a_l)
                     tvMensajeMascota.text= tvNombreMascota.text.toString() + " "+getString(R.string.mensajel)
+                    tvalimento.setTextColor(getColor(R.color.saludmedia))
                 }
                 if(estado <=1){
                     imMascota.setImageResource(R.drawable.a_m)
                     tvMensajeMascota.text= tvNombreMascota.text.toString() + " "+ getString(R.string.mensajem)
+                    tvalimento.setTextColor(getColor(R.color.saludmala))
                 }
 
             }
