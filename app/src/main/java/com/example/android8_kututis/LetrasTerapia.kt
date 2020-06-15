@@ -40,6 +40,11 @@ class LetrasTerapia : AppCompatActivity() {
             MascotaIntent.putExtra("idPaciente",idPaciente)
             startActivity(MascotaIntent)
         }
+        bt_medallas.setOnClickListener {
+            val MedallasIntent = Intent(this,Medallas::class.java)
+            MedallasIntent.putExtra("idPaciente",idPaciente)
+            startActivity(MedallasIntent)
+        }
     }
 
     fun fetchLetras(){
