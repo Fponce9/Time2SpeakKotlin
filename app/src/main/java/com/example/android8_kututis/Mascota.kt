@@ -14,7 +14,8 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-val estado =1
+var estado =1
+var alimento=11
 class Mascota : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +23,19 @@ class Mascota : AppCompatActivity() {
         val idPaciente = intent.getIntExtra("idPaciente",0)
         fecthMascota(idPaciente)
         tvalimento.text= estado.toString()+"/10"
+        tv_alimentos.text="Te quedan "+ alimento.toString()+" alimentos"
+
+        btn_alimentar.setOnClickListener {
+            if(estado<10){
+                if(alimento>0){
+                    estado= estado+1
+                    alimento=alimento-1
+                    tvalimento.text= estado.toString()+"/10"
+                    tv_alimentos.text="Te quedan "+ alimento.toString()+" alimentos"
+                    mensaje()
+                }
+            }
+        }
 
     }
 
@@ -41,30 +55,34 @@ class Mascota : AppCompatActivity() {
 
             override fun onResponse(call: Call<Mascota>, response: Response<Mascota>) {
                 tvNombreMascota.text=response.body()!!.nombre
-                if(estado >5&& estado<10){
-                    imMascota.setImageResource(R.drawable.a_f)
-                    val m = getString(R.string.mensajef)
-                    tvMensajeMascota.text= tvNombreMascota.text.toString()+" "+getString(R.string.mensajef)
-                    tvalimento.setTextColor(getColor(R.color.saludbuena))
-                }
-                if(estado >3&& estado<6){
-                    imMascota.setImageResource(R.drawable.a_t)
-                    tvMensajeMascota.text= tvNombreMascota.text.toString() +" "+ getString(R.string.mensajet)
-                    tvalimento.setTextColor(getColor(R.color.saludmedia))
-                }
-                if(estado >2&& estado<4){
-                    imMascota.setImageResource(R.drawable.a_l)
-                    tvMensajeMascota.text= tvNombreMascota.text.toString() + " "+getString(R.string.mensajel)
-                    tvalimento.setTextColor(getColor(R.color.saludmedia))
-                }
-                if(estado <=1){
-                    imMascota.setImageResource(R.drawable.a_m)
-                    tvMensajeMascota.text= tvNombreMascota.text.toString() + " "+ getString(R.string.mensajem)
-                    tvalimento.setTextColor(getColor(R.color.saludmala))
-                }
+                mensaje()
 
             }
         })
+    }
+
+    fun mensaje(){
+        if(estado >5&& estado<10){
+            imMascota.setImageResource(R.drawable.a_f)
+            val m = getString(R.string.mensajef)
+            tvMensajeMascota.text= tvNombreMascota.text.toString()+" "+getString(R.string.mensajef)
+            tvalimento.setTextColor(getColor(R.color.saludbuena))
+        }
+        if(estado >3&& estado<6){
+            imMascota.setImageResource(R.drawable.a_t)
+            tvMensajeMascota.text= tvNombreMascota.text.toString() +" "+ getString(R.string.mensajet)
+            tvalimento.setTextColor(getColor(R.color.saludmedia))
+        }
+        if(estado >2&& estado<4){
+            imMascota.setImageResource(R.drawable.a_l)
+            tvMensajeMascota.text= tvNombreMascota.text.toString() + " "+getString(R.string.mensajel)
+            tvalimento.setTextColor(getColor(R.color.saludmedia))
+        }
+        if(estado <=1){
+            imMascota.setImageResource(R.drawable.a_m)
+            tvMensajeMascota.text= tvNombreMascota.text.toString() + " "+ getString(R.string.mensajem)
+            tvalimento.setTextColor(getColor(R.color.saludmala))
+        }
     }
 
 }
