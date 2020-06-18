@@ -20,36 +20,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/im_boca"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toEndOf="@+id/im_ojo"
-        app:layout_constraintTop_toBottomOf="@+id/im_max"
-        app:layout_constraintVertical_bias="0.333"
-        app:srcCompat="@drawable/bloqueado" />
-
-    <ImageView
         android:id="@+id/im_diez"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/im_uno"
-        app:srcCompat="@drawable/bloqueado" />
-
-    <ImageView
-        android:id="@+id/im_max"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toEndOf="@+id/im_diez"
-        app:layout_constraintTop_toBottomOf="@+id/im_cinco"
         app:srcCompat="@drawable/bloqueado" />
 
     <ImageView
@@ -60,7 +37,30 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/im_diez"
-        app:layout_constraintVertical_bias="0.333"
+        app:layout_constraintVertical_bias="0.328"
+        app:srcCompat="@drawable/bloqueado" />
+
+    <ImageView
+        android:id="@+id/im_boca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toEndOf="@+id/im_ojo"
+        app:layout_constraintTop_toBottomOf="@+id/im_max"
+        app:layout_constraintVertical_bias="0.328"
+        app:srcCompat="@drawable/bloqueado" />
+
+    <ImageView
+        android:id="@+id/im_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toEndOf="@+id/im_diez"
+        app:layout_constraintTop_toBottomOf="@+id/im_cinco"
         app:srcCompat="@drawable/bloqueado" />
 
     <ImageView
