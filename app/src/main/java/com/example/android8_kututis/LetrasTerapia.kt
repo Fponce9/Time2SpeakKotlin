@@ -1,17 +1,18 @@
 package com.example.android8_kututis
 
 import android.content.Intent
-import android.net.Uri
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Matrix
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android8_kututis.Network.KututisApi
 import com.example.android8_kututis.Network.Letra
-import com.google.android.gms.auth.api.signin.GoogleSignIn
 import kotlinx.android.synthetic.main.activity_letras_terapia.*
+import kotlinx.android.synthetic.main.letras_terapia_row.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,20 +22,28 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class LetrasTerapia : AppCompatActivity() {
 
+    private var globalClass: GlobalClass? = null
+    var contador: Int? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_letras_terapia)
         val idPaciente = intent.getIntExtra("idPaciente",0)
 
-       /* val acct = GoogleSignIn.getLastSignedInAccount(this)
-        if (acct != null) {
-            val personName = acct.displayName
-            val personEmail = acct.email
-            val personId = acct.id
-            val personPhoto: Uri? = acct.photoUrl
-        }*/
+        globalClass = applicationContext as GlobalClass
+
+        contador = globalClass!!.contador_grabaciones!!
+
+        /* val acct = GoogleSignIn.getLastSignedInAccount(this)
+         if (acct != null) {
+             val personName = acct.displayName
+             val personEmail = acct.email
+             val personId = acct.id
+             val personPhoto: Uri? = acct.photoUrl
+         }*/
         rv_LetrasTerapias.layoutManager = LinearLayoutManager(this)
         fetchLetras()
+        updateBarra(contador!!)
         bt_mascota.setOnClickListener {
             val MascotaIntent = Intent(this,Mascota::class.java)
             MascotaIntent.putExtra("idPaciente",idPaciente)
@@ -69,5 +78,32 @@ class LetrasTerapia : AppCompatActivity() {
         })
 
 
+    }
+
+    fun updateBarra(contador: Int) {
+        val barraSprites =
+            BitmapFactory.decodeResource(resources, R.drawable.sprite_barra)
+        val barra =
+            Bitmap.createBitmap(barraSprites, 1046 * contador, 0, 1046, barraSprites.height)
+        imageViewBarra.setImageBitmap(getResizedBitmap(barra, 400, 100))
+    }
+
+
+    fun getResizedBitmap(bm: Bitmap, newWidth: Int, newHeight: Int): Bitmap? {
+        val width = bm.width
+        val height = bm.height
+        val scaleWidth = newWidth.toFloat() / width
+        val scaleHeight = newHeight.toFloat() / height
+        // CREATE A MATRIX FOR THE MANIPULATION
+        val matrix = Matrix()
+        // RESIZE THE BIT MAP
+        matrix.postScale(scaleWidth, scaleHeight)
+
+        // "RECREATE" THE NEW BITMAP
+        val resizedBitmap = Bitmap.createBitmap(
+            bm, 0, 0, width, height, matrix, false
+        )
+        bm.recycle()
+        return resizedBitmap
     }
 }

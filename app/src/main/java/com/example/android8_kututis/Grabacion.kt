@@ -34,11 +34,16 @@ class Grabacion : AppCompatActivity() {
     private var mStorage: StorageReference? =null
     lateinit var mProgressBar: ProgressBar
     lateinit var nameFile: String
+    private var globalClass: GlobalClass? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grabacion)
+
+
+        globalClass = applicationContext as GlobalClass
+
 
         mStorage = FirebaseStorage.getInstance().reference
 
@@ -120,6 +125,9 @@ class Grabacion : AppCompatActivity() {
         }?.addOnFailureListener(OnFailureListener {
             Log.w("Subida de archivo Firebase","Audio no se pudo subir correctamente a la nube de google")
         })
+
+        globalClass?.contador_grabaciones = globalClass?.contador_grabaciones?.plus(1)
+
     }
 
     private fun setupMediaRecorder() {
