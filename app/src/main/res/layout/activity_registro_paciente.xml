@@ -10,7 +10,9 @@
         android:id="@+id/etRepetirContraseña"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".RegistroActivity">
+        tools:context=".RegistroActivity"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <Button
             android:id="@+id/btnRegistrarme"
@@ -45,13 +47,13 @@
             android:layout_marginStart="60dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="60dp"
+            android:autofillHints="emailAddress"
             android:ems="10"
             android:hint="@string/correo_electronico"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etApellidoRegistro"
-            android:autofillHints="emailAddress" />
+            app:layout_constraintTop_toBottomOf="@+id/etApellidoRegistro" />
 
         <EditText
             android:id="@+id/etApellidoRegistro"
@@ -60,13 +62,13 @@
             android:layout_marginStart="60dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="60dp"
+            android:autofillHints="personFamilyName"
             android:ems="10"
             android:hint="@string/apellido"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etNombreRegistro"
-            android:autofillHints="personFamilyName" />
+            app:layout_constraintTop_toBottomOf="@+id/etNombreRegistro" />
 
         <EditText
             android:id="@+id/etNacimientoRegistro"
@@ -80,8 +82,7 @@
             android:inputType="date"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etEmailRegistro"
-             />
+            app:layout_constraintTop_toBottomOf="@+id/etEmailRegistro" />
 
         <EditText
             android:id="@+id/etContrasenaRegistro"
@@ -90,13 +91,13 @@
             android:layout_marginStart="60dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="60dp"
+            android:autofillHints="newPassword"
             android:ems="10"
             android:hint="@string/contrasena"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etNacimientoRegistro"
-            android:autofillHints="newPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/etNacimientoRegistro" />
 
         <EditText
             android:id="@+id/etConfContrasenaRegistro"
@@ -110,8 +111,7 @@
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etContrasenaRegistro"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/etContrasenaRegistro" />
 
         <EditText
             android:id="@+id/etNombreRegistro"
@@ -120,13 +120,13 @@
             android:layout_marginStart="60dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="60dp"
+            android:autofillHints="personName"
             android:ems="10"
             android:hint="@string/nombre"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            android:autofillHints="personName"/>
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

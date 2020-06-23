@@ -1,16 +1,13 @@
 package com.example.android8_kututis
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android8_kututis.Network.KututisApi
 import com.example.android8_kututis.Network.Letra
-import com.google.android.gms.auth.api.signin.GoogleSignIn
 import kotlinx.android.synthetic.main.activity_letras_terapia.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -44,6 +41,11 @@ class LetrasTerapia : AppCompatActivity() {
             val MedallasIntent = Intent(this,Medallas::class.java)
             MedallasIntent.putExtra("idPaciente",idPaciente)
             startActivity(MedallasIntent)
+        }
+        imeditar.setOnClickListener {
+            val EditarIntent=Intent(this,EditarPerfil::class.java )
+            EditarIntent.putExtra("idPaciente",idPaciente)
+            startActivity(EditarIntent)
         }
     }
 

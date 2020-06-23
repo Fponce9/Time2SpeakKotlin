@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Medallas"></activity>
+        <activity android:name=".EditarPerfil"></activity>
+        <activity android:name=".Medallas" />
         <activity android:name=".Mascota" />
         <activity android:name=".PalabrasLetra" />
         <activity android:name=".VisualizarFeedback" />
