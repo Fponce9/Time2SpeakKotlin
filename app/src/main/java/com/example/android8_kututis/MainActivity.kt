@@ -128,8 +128,13 @@ class MainActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<User>, response: Response<User>) {
                 val nombre = response.body()!!.nombre
+                usuario.correo=response.body()!!.correo
+                usuario.fechaNacimiento=response.body()!!.fechaNacimiento
                 usuario.nombre=nombre
+                usuario.apellido=response.body()!!.apellido
                 usuario.idPaciente=response.body()!!.idPaciente
+
+
                 Logger()
             }
         })

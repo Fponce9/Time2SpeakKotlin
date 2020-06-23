@@ -8,6 +8,7 @@ class EditarPerfil : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_editar_perfil)
+        filldata()
         et_ConfContraEdit.isEnabled=false
         et_ContraEditar.isEnabled=false
         etEmailEdit.isEnabled=false
@@ -18,6 +19,7 @@ class EditarPerfil : AppCompatActivity() {
         var save=false
         var edit=true
         im_edit.isClickable=true
+
         im_edit.setOnClickListener {
             if (save==false){
                 im_save.isClickable=true
@@ -39,5 +41,13 @@ class EditarPerfil : AppCompatActivity() {
                 save=false
             }
         }
+    }
+    fun filldata(){
+        val a = "sdfsdf"
+        etNombreEdit.setText(usuario.nombre)
+        etApellidoEdit.setText(usuario.apellido)
+        etNacimientoEdit.setText(usuario.fechaNacimiento)
+        etEmailEdit.setText(usuario.correo)
+
     }
 }
