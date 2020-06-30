@@ -133,9 +133,17 @@ class MainActivity : AppCompatActivity() {
                 usuario.nombre=nombre
                 usuario.apellido=response.body()!!.apellido
                 usuario.idPaciente=response.body()!!.idPaciente
+                usuario.deshabilitado=response.body()!!.deshabilitado
+                usuario.doctorId=response.body()!!.doctorId
+                usuario.contrasena=response.body()!!.contrasena
 
+                if (usuario.deshabilitado){
+                    Toast.makeText(applicationContext,"Su cuenta ha sido deshabilitada.",Toast.LENGTH_LONG).show()
+                }
+                if(usuario.deshabilitado==false){
+                    Logger()
+                }
 
-                Logger()
             }
         })
     }

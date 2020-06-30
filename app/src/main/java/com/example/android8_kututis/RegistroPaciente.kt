@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.example.android8_kututis.Network.KututisApi
+import com.example.android8_kututis.Network.Mascota
+import com.example.android8_kututis.Network.MascotaPost
 import com.example.android8_kututis.Network.User
 import com.example.android8_kututis.Network.UserPost
 import kotlinx.android.synthetic.main.activity_registro_paciente.*
@@ -47,7 +49,9 @@ class RegistroPaciente : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<User>, response: Response<User>) {
+                val newPacienteId=response.body()!!.idPaciente
                 Toast.makeText(applicationContext,"Se ha registrado correctamente.",Toast.LENGTH_LONG).show()
+                AsignarMascota(newPacienteId)
                 CrearMain()
             }
 
@@ -57,6 +61,27 @@ class RegistroPaciente : AppCompatActivity() {
     private fun CrearMain(){
         val MainIntent = Intent(this, MainActivity::class.java)
         startActivity(MainIntent)
+    }
+    private fun AsignarMascota(pacienteId:Int){
+        var mascota:MascotaPost = MascotaPost("0","Kutur",pacienteId)
+        val retrofitBuilder = Retrofit.Builder()
+            .baseUrl("http://time2speak-env.eba-mitec5md.us-east-1.elasticbeanstalk.com/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        val KututisApi = retrofitBuilder.create(KututisApi::class.java)
+        val request = KututisApi.createMascota(mascota)
+        request.enqueue(object : Callback<Mascota>{
+            override fun onFailure(call: Call<Mascota>, t: Throwable) {
+                Toast.makeText(applicationContext,"Ha ocurrido un error al crear la mascota",Toast.LENGTH_LONG).show()
+                Log.d("RegistroPaciente",t.toString())
+            }
+
+            override fun onResponse(call: Call<Mascota>, response: Response<Mascota>) {
+                Toast.makeText(applicationContext,"Se ha registrado correctamente.",Toast.LENGTH_LONG).show()
+            }
+
+        })
+
     }
 }
 

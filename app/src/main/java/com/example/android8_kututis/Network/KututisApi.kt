@@ -1,6 +1,7 @@
 package com.example.android8_kututis.Network
 
 import com.example.android8_kututis.LetrasTerapia
+import com.example.android8_kututis.usuario
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -28,4 +29,13 @@ internal interface KututisApi {
     @GET("getPremioPaciente/{Id}")
     fun getPremiosPaciente(@Path ("Id")idPaciente:Int):Call<List<Premio>>
 
+    @Headers("{Content-Type: application/json}")
+    @PUT("acualizarPaciente")
+    fun putActualizarPaciente(@Body usuario:User):Call<User>
+
+    @POST("addMascota")
+    fun createMascota(@Body mascota:MascotaPost):Call<Mascota>
+
+    @POST("deshabilitarPaciente/{Id}")
+    fun createdDeshabilitar(@Path ("Id")idPaciente:Int):Call<User>
 }

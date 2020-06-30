@@ -36,8 +36,12 @@ class Medallas : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<List<Premio>>, response: Response<List<Premio>>) {
+                val vacio:List<Premio>
                 val lista=response.body()!!
-                reconocermedallas(lista)
+                if(lista.isEmpty()){
+                    reconocermedallas(lista)
+                }
+
             }
         })
     }
