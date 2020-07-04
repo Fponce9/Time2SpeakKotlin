@@ -1,7 +1,6 @@
-package com.example.android8_kututis.Network
+package com.example.android8_kututis.Data
 
 import com.google.gson.annotations.SerializedName
-import java.sql.Blob
 
 class Palabra (
     @SerializedName("id_palabra")

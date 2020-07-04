@@ -6,8 +6,8 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.android8_kututis.Network.KututisApi
-import com.example.android8_kututis.Network.Letra
+import com.example.android8_kututis.Data.KututisApi
+import com.example.android8_kututis.Data.Letra
 import kotlinx.android.synthetic.main.activity_letras_terapia.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -32,20 +32,30 @@ class LetrasTerapia : AppCompatActivity() {
         }*/
         rv_LetrasTerapias.layoutManager = LinearLayoutManager(this)
         fetchLetras()
-        bt_mascota.setOnClickListener {
-            val MascotaIntent = Intent(this,Mascota::class.java)
-            MascotaIntent.putExtra("idPaciente",idPaciente)
-            startActivity(MascotaIntent)
-        }
-        bt_medallas.setOnClickListener {
-            val MedallasIntent = Intent(this,Medallas::class.java)
-            MedallasIntent.putExtra("idPaciente",idPaciente)
-            startActivity(MedallasIntent)
-        }
-        imeditar.setOnClickListener {
-            val EditarIntent=Intent(this,EditarPerfil::class.java )
-            EditarIntent.putExtra("idPaciente",idPaciente)
-            startActivity(EditarIntent)
+
+        nav_bar.selectedItemId = R.id.home
+        nav_bar.setOnNavigationItemSelectedListener { item ->
+           when(item.itemId){
+
+               R.id.pet->{
+                   val MascotaIntent = Intent(this,Mascota::class.java)
+                   MascotaIntent.putExtra("idPaciente",idPaciente)
+                   startActivity(MascotaIntent)
+               }
+
+               R.id.profile->{
+                   val EditarIntent=Intent(this,EditarPerfil::class.java )
+                   EditarIntent.putExtra("idPaciente",idPaciente)
+                   startActivity(EditarIntent)
+               }
+
+               R.id.medal->{
+                   val MedallasIntent = Intent(this,Medallas::class.java)
+                   MedallasIntent.putExtra("idPaciente",idPaciente)
+                   startActivity(MedallasIntent)
+               }
+           }
+           true
         }
     }
 

@@ -4,11 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.core.graphics.drawable.DrawableCompat
-import com.example.android8_kututis.Network.KututisApi
-import com.example.android8_kututis.Network.User
+import com.example.android8_kututis.Data.KututisApi
+import com.example.android8_kututis.Data.User
 import kotlinx.android.synthetic.main.activity_editar_perfil.*
-import kotlinx.android.synthetic.main.activity_registro_paciente.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

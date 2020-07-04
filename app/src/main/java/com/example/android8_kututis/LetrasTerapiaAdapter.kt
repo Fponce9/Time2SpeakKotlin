@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.android8_kututis.Network.Letra
+import com.example.android8_kututis.Data.Letra
 import kotlinx.android.synthetic.main.letras_terapia_row.view.*
 
 class LetrasTerapiaAdapter(val Letras : List<Letra>): RecyclerView.Adapter<CustomViewHolder>() {

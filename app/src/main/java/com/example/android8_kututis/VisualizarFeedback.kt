@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import com.example.android8_kututis.Network.Feedback
-import com.example.android8_kututis.Network.KututisApi
+import com.example.android8_kututis.Data.Feedback
+import com.example.android8_kututis.Data.KututisApi
 import kotlinx.android.synthetic.main.activity_visualizar_feedback.*
 import retrofit2.Call
 import retrofit2.Callback

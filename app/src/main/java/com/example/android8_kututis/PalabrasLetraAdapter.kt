@@ -7,9 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.android8_kututis.Network.Palabra
+import com.example.android8_kututis.Data.Palabra
 import kotlinx.android.synthetic.main.palabras_letra_row.view.*
-import java.lang.Byte.decode
 
 
 class PalabrasLetraAdapter(val Palabras:List<Palabra>):RecyclerView.Adapter<PalabrasViewHolder>() {

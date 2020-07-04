@@ -1,6 +1,4 @@
-package com.example.android8_kututis.Network
-
-import android.text.BoringLayout
+package com.example.android8_kututis.Data
 
 
 class Feedback (

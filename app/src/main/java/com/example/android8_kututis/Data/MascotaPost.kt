@@ -1,4 +1,4 @@
-package com.example.android8_kututis.Network
+package com.example.android8_kututis.Data
 
 class MascotaPost (
     var imagen:String,

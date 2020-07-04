@@ -1,7 +1,5 @@
-package com.example.android8_kututis.Network
+package com.example.android8_kututis.Data
 
-import com.example.android8_kututis.LetrasTerapia
-import com.example.android8_kututis.usuario
 import retrofit2.Call
 import retrofit2.http.*
 

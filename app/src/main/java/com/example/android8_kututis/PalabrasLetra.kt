@@ -5,10 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.android8_kututis.Network.KututisApi
-import com.example.android8_kututis.Network.Letra
-import com.example.android8_kututis.Network.Palabra
-import kotlinx.android.synthetic.main.activity_letras_terapia.*
+import com.example.android8_kututis.Data.KututisApi
+import com.example.android8_kututis.Data.Palabra
 import kotlinx.android.synthetic.main.activity_palabras_letra.*
 import retrofit2.Call
 import retrofit2.Callback

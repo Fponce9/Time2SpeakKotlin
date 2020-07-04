@@ -1,11 +1,13 @@
 package com.example.android8_kututis
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import com.example.android8_kututis.Network.KututisApi
-import com.example.android8_kututis.Network.Premio
+import com.example.android8_kututis.Data.KututisApi
+import com.example.android8_kututis.Data.Premio
+import kotlinx.android.synthetic.main.activity_letras_terapia.*
 import kotlinx.android.synthetic.main.activity_medallas.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -19,6 +21,8 @@ class Medallas : AppCompatActivity() {
         setContentView(R.layout.activity_medallas)
         val id=2
         fetchMedalla(id)
+
+
     }
 
     fun fetchMedalla(idPaciente:Int){

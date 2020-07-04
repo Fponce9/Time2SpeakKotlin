@@ -2,12 +2,11 @@ package com.example.android8_kututis
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.android8_kututis.Network.KututisApi
-import com.example.android8_kututis.Network.User
+import com.example.android8_kututis.Data.KututisApi
+import com.example.android8_kututis.Data.User
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -88,6 +87,7 @@ class MainActivity : AppCompatActivity() {
                     Log.d("SignInActivity","Sign in success")
                     val user = mAuth.currentUser
                     val TerapiaIntent =Intent(this,LetrasTerapia::class.java)
+                    TerapiaIntent.putExtra("idPaciente", 13)
                     startActivity(TerapiaIntent)
                 }else{
                     Log.w("SignInActivity","Sign in Failure", task.exception)

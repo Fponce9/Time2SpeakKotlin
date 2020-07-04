@@ -1,14 +1,14 @@
 package com.example.android8_kututis
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import com.example.android8_kututis.Network.KututisApi
-import com.example.android8_kututis.Network.Mascota
-import com.example.android8_kututis.Network.User
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.android8_kututis.Data.KututisApi
+import com.example.android8_kututis.Data.Mascota
 import kotlinx.android.synthetic.main.activity_mascota.*
+import kotlinx.android.synthetic.main.activity_medallas.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -16,6 +16,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 var estado =1
 var alimento=7
+
 class Mascota : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +37,8 @@ class Mascota : AppCompatActivity() {
                 }
             }
         }
+
+
 
     }
 
