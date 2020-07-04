@@ -91,6 +91,7 @@ class Grabacion : AppCompatActivity() {
             }
         }
         ivMicrofonoOff.setOnClickListener{
+            alimento += 1
             mRecorder?.stop()
             mRecorder?.release()
             mRecorder = null

@@ -29,8 +29,7 @@ internal interface KututisApi {
     @GET("getPremioPaciente/{Id}")
     fun getPremiosPaciente(@Path ("Id")idPaciente:Int):Call<List<Premio>>
 
-    @Headers("{Content-Type: application/json}")
-    @PUT("acualizarPaciente")
+    @POST("acualizarPaciente")
     fun putActualizarPaciente(@Body usuario:User):Call<User>
 
     @POST("addMascota")

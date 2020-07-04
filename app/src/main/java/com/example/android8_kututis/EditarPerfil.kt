@@ -37,7 +37,6 @@ class EditarPerfil : AppCompatActivity() {
                 im_edit.isClickable=false
                 et_ConfContraEdit.isEnabled=true
                 et_ContraEditar.isEnabled=true
-                etEmailEdit.isEnabled=true
                 save=true
                 edit=false
                 im_save.setImageResource(R.drawable.guardar)
@@ -49,7 +48,6 @@ class EditarPerfil : AppCompatActivity() {
                 im_edit.isClickable=true
                 et_ConfContraEdit.isEnabled=false
                 et_ContraEditar.isEnabled=false
-                etEmailEdit.isEnabled=false
                 edit=true
                 save=false
                 update()
